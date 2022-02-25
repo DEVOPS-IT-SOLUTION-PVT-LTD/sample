@@ -1,0 +1,22 @@
+pipeline { 
+    agent any 
+    stages {
+        stage('Build') { 
+            steps { 
+                echo "build step to create a package"
+                echo "First stage"
+            }
+        }
+        stage('Test'){
+            steps {
+                echo "This is a testing step using JUNIT"
+              
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo "deployment using Ansible"
+            }
+        }
+    }
+}
