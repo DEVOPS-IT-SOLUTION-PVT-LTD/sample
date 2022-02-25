@@ -1,21 +1,19 @@
 pipeline { 
     agent any 
     stages {
-        stage('Build') { 
+        stage('clone') { 
             steps { 
-                echo "build step to create a package"
-                echo "First stage"
+                git 'https://github.com/DEVOPS-IT-SOLUTION-PVT-LTD/sample.git'
             }
         }
-        stage('Test'){
+        stage('test'){
             steps {
-                echo "This is a testing step using JUNIT"
-              
+                echo " This is a testing step using JUNIT"
             }
         }
         stage('Deploy') {
             steps {
-                echo "deployment using Ansible"
+                echo " deployment using Ansible"
             }
         }
     }
